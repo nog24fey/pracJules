@@ -9,5 +9,6 @@ feedparser>=6.0.0
 pandas>=2.0.0
 plotly>=5.0.0
 requests>=2.30.0
-streamlit>=1.40.0
+# streamlit>=1.40.0 # Removed as we switched to notebook
 yfinance>=0.2.0
+jupyter

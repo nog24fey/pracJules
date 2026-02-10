@@ -1,6 +1,6 @@
 # Nikkei 225 Buzz & Price Tracker
 
-This application traces the stock price and "topic buzz" (news volume) for major Nikkei 225 companies.
+This project provides a Jupyter Notebook to trace the stock price and "topic buzz" (news volume) for major Nikkei 225 companies.
 
 ## Setup
 
@@ -8,28 +8,29 @@ This application traces the stock price and "topic buzz" (news volume) for major
    ```bash
    pip install -r requirements.txt
    ```
+   (Note: The notebook itself will also attempt to install necessary packages in the first cell.)
+
+2. Launch Jupyter Notebook:
+   ```bash
+   jupyter notebook nikkei_buzz_tracker.ipynb
+   ```
 
 ## Usage
 
-1. **Collect Data**:
-   Run the data collector script to fetch the latest stock prices and news data. You can run this periodically (e.g., via cron) or click the "Refresh" button in the app.
-   ```bash
-   python3 data_collector.py
-   ```
-
-2. **Run Dashboard**:
-   Start the Streamlit app to visualize the data.
-   ```bash
-   streamlit run app.py
-   ```
+1. Open `nikkei_buzz_tracker.ipynb`.
+2. Run all cells.
+   - The notebook will fetch the latest stock prices via Yahoo Finance.
+   - It will search Google News RSS for article counts (buzz).
+   - It will update the local data file `market_data.csv`.
+   - It will display interactive charts (Price, Buzz, Sentiment) and a table of the latest headlines directly in the notebook.
 
 ## Features
 
 - **Stock Price**: Fetches real-time/delayed prices via Yahoo Finance.
 - **Buzz Score**: Counts the volume of recent news articles via Google News RSS.
 - **Sentiment Score**: A simple keyword-based sentiment analysis of news titles.
-- **Visualizations**: Interactive charts for price and buzz trends.
+- **Visualizations**: Interactive Plotly charts.
 
 ## Configuration
 
-You can add more tickers to the `TICKERS` dictionary in `data_collector.py`.
+You can modify the `TICKERS` dictionary in the notebook to add or remove companies.
