@@ -1,6 +1,9 @@
-qiskit
+qiskit<2.0
 qiskit-aer
 numpy
 matplotlib
 networkx
 pylatexenc
+qiskit-nature
+qiskit-algorithms
+pyscf
